@@ -20,6 +20,14 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+svg g {
+	transform-origin: 50% 50%;
+}
+
+path, polyline, line, circle {
+	opacity: 0;
+}
+
 .content a,
 a.link {
 	display: inline-block;
