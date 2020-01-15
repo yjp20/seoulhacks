@@ -108,13 +108,6 @@ window.addEventListener("load", () => {
 		delay: function(el, i) { return i * 5 },
 	});
 	anime({
-		targets: ring1,
-		rotate: 360,
-		easing: 'linear',
-		duration: 15000,
-		loop: true,
-	});
-	anime({
 		targets: combo,
 		opacity: 1,
 		easing: 'easeInOutSine',
