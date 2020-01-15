@@ -161,6 +161,7 @@ section.hero .container {
 .fg-accent-2 { color: var(--accent-2); }
 .fg-accent-3 { color: var(--accent-3); }
 .fg-accent-4 { color: var(--accent-4); }
+.fg-dark { color: #444; }
 
 .bg-accent-0 { background-color: var(--accent-0); }
 .bg-accent-1 { background-color: var(--accent-1); }
@@ -266,6 +267,10 @@ footer ul li:not(:first-child) {
   -ms-animation: rotating 15s linear infinite;
   -o-animation: rotating 15s linear infinite;
   animation: rotating 15s linear infinite;
+}
+
+#map {
+	height: 500px;
 }
 
 @media only screen and (max-width: 800px) {
