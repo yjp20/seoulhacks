@@ -128,7 +128,7 @@ section.hero .container {
 section.hero .hero-title {
 	font-family: "Montserrat";
 	margin: 0 0 0.1em 0;
-	font-size: 8em;
+	font-size: 6em;
 }
 
 section.hero .hero-date {
@@ -226,11 +226,21 @@ footer ul li:not(:first-child) {
 	border-left: 1px solid #666;
 }
 
+.main-svg {
+	width: 60%;
+}
+
 @media only screen and (max-width: 800px) {
+	.main-svg {
+		width: 100%;
+	}
 	section.hero .hero-title {
 		font-size: 3rem;
 	}
 	.container {
 		width: 100%;
+	}
+	.navbar-brand {
+		display: none;
 	}
 }
