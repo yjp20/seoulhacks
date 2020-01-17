@@ -112,6 +112,10 @@ a.link {
 	padding: 0 1em;
 }
 
+img {
+	width: 100%;
+}
+
 section {
 	width: 100%;
 	padding: 5em 0;
@@ -128,7 +132,7 @@ section.hero .container {
 section.hero .hero-title {
 	font-family: "Montserrat";
 	margin: 0 0 0.1em 0;
-	font-size: 6em;
+	font-size: 5em;
 }
 
 section.hero .hero-date {

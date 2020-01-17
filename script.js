@@ -73,6 +73,11 @@ window.addEventListener("load", () => {
 		}.bind(cards[i]))
 	}
 
+	/* animate on scroll */
+
+	AOS.init({
+		once: true,
+	})
 
 	/* svg animation */
 
