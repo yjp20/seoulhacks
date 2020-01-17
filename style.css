@@ -277,7 +277,7 @@ footer ul li:not(:first-child) {
 	height: 500px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
 	.main-svg {
 		width: 100%;
 	}
