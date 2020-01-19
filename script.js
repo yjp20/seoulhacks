@@ -94,7 +94,6 @@ window.addEventListener("load", () => {
 	var ring1_paths = [...ring1.querySelectorAll('path')]
 
 	combo.forEach(e => (ring1_paths.includes(e) || Math.random() < 0.7 ? combo_a : combo_b).push(e))
-	console.log(ring1_paths)
 
 	anime({
 		targets: combo_a,
