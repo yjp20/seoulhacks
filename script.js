@@ -62,17 +62,6 @@ function reverseOffset(el) {
 
 window.addEventListener("load", () => {
 
-	/* card expander */
-
-	const cards = document.getElementsByClassName("card-expand")
-	const title = document.getElementById("main-title")
-
-	for (var i=0; i<cards.length; i++) {
-		cards[i].addEventListener("click", function () {
-			this.dataset.expanded = this.dataset.expanded == "true" ? false : true
-		}.bind(cards[i]))
-	}
-
 	/* animate on scroll */
 
 	AOS.init({

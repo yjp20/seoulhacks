@@ -1,6 +1,6 @@
 body {
 	margin: 1.5em;
-	font-family: "IBM Plex Serif";
+	font-family: "IBM Plex Sans";
 	color: #333;
 
 	--accent-0: #f8b195;
@@ -159,7 +159,7 @@ section.hero .container {
 	-webkit-text-stroke-color: white;
 }
 
-.fg-white { color: var(--secondary-light); }
+.fg-white { color: white; }
 .fg-accent-0 { color: var(--accent-0); }
 .fg-accent-1 { color: var(--accent-1); }
 .fg-accent-2 { color: var(--accent-2); }
@@ -183,6 +183,11 @@ section.hero .container {
 
 .subtitle {
 	font-size: 3em;
+}
+
+.faq-item {
+	box-sizing: border-box;
+	padding: 1em;
 }
 
 .mb-5 {
@@ -233,6 +238,28 @@ footer ul li:not(:first-child) {
 
 .main-svg {
 	width: 60%;
+}
+
+table {
+  border-collapse: collapse;
+	width: 100%;
+}
+
+thead {
+	border-bottom: 2px solid #00000055;
+
+}
+
+th, td {
+  border-bottom: 1px solid #00000055;
+}
+
+tr:last-child th, tr:last-child td {
+	border: 0;
+}
+
+th, td {
+	padding: 0.5em 0.75em;
 }
 
 
