@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<title>SeoulHacks 3</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar">
+				<div class="navbar-brand">
+					<div class="navbar-item">SH</div>
+				</div>
+				<div class="navbar-menu">
+					<a href="#about" class="navbar-item">About</a>
+					<a href="#compete" class="navbar-item">Compete</a>
+					<a href="#learn" class="navbar-item">Learn</a>
+					<a href="#team" class="navbar-item">Team</a>
+				</div>
+			</nav>
+		</div>
+		<div class="section is-large main-section">
+			<div class="container">
+				<p class="main-date label font-type"> 10/30 - 11/1 </p>
+				<h1 class="title main-title">Seoul<br/>Hacks
+				<div class="main-apply-container">
+					<button class="button main-apply">Apply</button>
+				</div>
+				</h1>
+				<p id="typer" class="subtitle font-type"></p>
+			</div>
+		</div>
+		<div class="section is-large">
+			<div class="container">
+				<hr id="about" />
+				<div class="columns is-tablet" data-aos="fade-up">
+					<div class="column">
+						<h3 class="subtitle">About</h3>
+					</div>
+					<div class="column">
+						<p class="paragraph"> SeoulHacks is the only high-school hackathon in Korea that accommodates for both complete beginners and experienced programmers. At its core, our competition is about proving that coding is a tool that everyone can work with and sharing the excitement of creative freedom.</p>
+					</div>
+				</div>
+				<div data-aos="fade-up" style="width: 100%; margin-top: 3em; padding-top: 60%; background-color: #333">tmp image</div>
+				<hr id="compete" />
+				<div data-aos="fade-up" class="columns is-tablet">
+					<div class="column">
+						<h3 class="subtitle">Compete</h3>
+					</div>
+					<div class="column">
+						<p class="paragraph">We believe that both beginners and experienced programmers should be able to participate in healthy, constructive competition. Over the period of the competition, competitors will be expected to develop an application based on a given prompt using any language of their choice. After submission, the different applications will be graded based on factors such as creativity, technical difficulty, and visual appearance by a panel of judges. Individual feedback will be provided for each application. Lastly, awards and prizes will be given out to outstanding submissions. To ensure that beginners can be engaged in the competition as well, separate awards will be given out specifically for beginners.</p>
+					</div>
+				</div>
+				<hr id="learn" />
+				<div data-aos="fade-up" class="columns is-tablet">
+					<div class="column">
+						<h3 class="subtitle">Learn</h3>
+					</div>
+					<div class="column">
+						<p class="paragraph">While SeoulHacks is about competition, it is so much more about learning and having fun. SeoulHacks ensures that both complete beginners and experienced programmers will be able to actively participate and learn.</p>
+					</div>
+				</div>
+				<div data-aos="fade-up" class="main-triple">
+					<div class="columns is-desktop">
+						<div class="column">
+							<h2 class="subtitle">Mentors</h2>
+							<p>Experienced mentors will be available for participants throughout the duration of the competition. If you’re feeling lost or confused at any point in the competition, need quick help, or don’t even know where to begin, feel free to reach out to a mentor!.</p>
+						</div>
+						<div class="vr"></div>
+						<div class="column">
+							<h2 class="subtitle">Workshops</h2>
+							<p>Optional workshops will be given on both simple and advanced topics. Feel free to drop in and learn something new, whether or not it applies to your project.</p>
+						</div>
+						<div class="vr"></div>
+						<div class="column">
+							<h2 class="subtitle">Routes</h2>
+							<p>For complete beginners, we provide routes and comprehensive mentorship to get started. Even if you don’t know anything about programming, there will be a roadmap to follow and mentors to help you, so don’t worry and feel free to join!</p>
+						</div>
+					</div>
+				</div>
+				<hr id="team"/>
+				<div data-aos="fade-up" class="columns is-tablet">
+					<div class="column">
+						<h3 class="subtitle">Team</h3>
+					</div>
+					<div class="column">
+						<p class="paragraph">While SeoulHacks is about competition, it is so much more about learning and having fun. SeoulHacks ensures that both complete beginners and experienced programmers will be able to actively participate and learn.</p>
+					</div>
+				</div>
+				<div class="columns">
+				</div>
+			</div>
+		</div>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+			var strings = [
+				["Imagine.", "#fff"],
+				["Build.", "#f00"],
+				["Design.", "#0f0"],
+				["Learn.", "#ee0"],
+				["Compete.", "#0ee"],
+			];
+			var typer = document.querySelector("#typer");
+			var index = 0;
+			var events = strings
+				.map((s) => [
+						[s[1], "color"],
+						...s[0].split("").map((c) => [c, "create"]),
+						[null, "wait"],
+						...s[0].split("").map((c) => [c, "delete"]),
+				])
+				.reduce((arr, acc) => acc.concat(arr), [])
+
+			function it() {
+				index %= events.length;
+				const e = events[index];
+				switch (e[1]) {
+				case "create":
+					typer.innerText = typer.innerText + e[0];
+					break;
+				case "delete":
+					typer.innerText = typer.innerText.substring(0, typer.innerText.length - 1);
+					break;
+				case "color":
+					typer.style = "color: " + e[0];
+					break;
+				case "wait":
+					index ++;
+					setTimeout(it, 550+Math.random()*100);
+					return;
+				}
+				index ++;
+				setTimeout(it, 150+Math.random()*100);
+			}
+			it();
+		</script>
+	</body>
+</html>
