@@ -1,0 +1,12 @@
+{
+	"name": "seoulhacks3",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build:watch": "sass --watch styles/style.scss styles/style.css",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Young Jin Park",
+	"license": "MIT"
+}
