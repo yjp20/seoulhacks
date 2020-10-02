@@ -801,6 +801,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.subtitle,
+.title {
+  font-weight: 900;
+}
+
 .light-box {
   box-shadow: 0 4px 12px 0px #0023830a;
   padding: 2em;
@@ -814,10 +819,6 @@ html {
   height: 1em;
 }
 
-.subtitle {
-  font-weight: 900;
-}
-
 .font-type {
   font-family: "B612 Mono", sans-serif;
 }
@@ -826,27 +827,25 @@ html {
   display: flex;
   padding: 1em 0;
 }
-
-.navbar-brand {
+.navbar .navbar-brand {
   flex: 1;
 }
-
-.navbar-brand .navbar-item {
+.navbar .navbar-brand .navbar-item {
   font-weight: 600;
   color: #031b4e;
 }
-
-.navbar-menu {
+.navbar .navbar-menu {
   display: flex;
 }
-
-.navbar-item, a.navbar-item {
+.navbar .navbar-item,
+.navbar a.navbar-item {
   font-weight: 600;
   text-decoration: none;
   padding: 0.5em;
   color: #005fff;
 }
-.navbar-item:hover, a.navbar-item:hover {
+.navbar .navbar-item:hover,
+.navbar a.navbar-item:hover {
   opacity: 0.8;
 }
 
@@ -856,6 +855,18 @@ html {
   flex-direction: column;
   justify-content: flex-end;
   min-height: calc(100vh - 4em);
+}
+.main-section .main-title {
+  position: relative;
+  font-weight: 600;
+  font-size: 5em;
+  margin-bottom: 0.9em;
+}
+@media only screen and (min-width: 1024px) {
+  .main-section .main-title {
+    font-size: 8em;
+    margin-bottom: 0.3em !important;
+  }
 }
 
 .main-apply-container {
@@ -868,8 +879,7 @@ html {
     bottom: 0.15em;
   }
 }
-
-.main-apply {
+.main-apply-container .main-apply {
   position: relative;
   overflow: hidden;
   padding: 1rem;
@@ -881,49 +891,49 @@ html {
   color: #031b4e;
   transition: all 0.1s ease;
 }
-.main-apply:before {
+.main-apply-container .main-apply:before {
   position: absolute;
   right: -1em;
   display: inline-block;
   content: " ›";
   transition: right 0.3s ease;
 }
-.main-apply:after {
+.main-apply-container .main-apply:after {
   display: inline-block;
   width: 0em;
   content: "";
   transition: width 0.3s ease;
 }
-.main-apply:hover {
+.main-apply-container .main-apply:hover {
   opacity: 0.5;
   border: 1px solid #031b4e;
 }
-.main-apply:hover:before {
+.main-apply-container .main-apply:hover:before {
   right: 1em;
 }
-.main-apply:hover:after {
+.main-apply-container .main-apply:hover:after {
   width: 3em;
 }
 
-.main-title {
-  position: relative;
-  font-weight: 600;
-  font-size: 5em;
-  margin-bottom: 0.9em;
+.team-list-item {
+  text-align: center;
+  padding: 2em 0;
 }
-@media only screen and (min-width: 1024px) {
-  .main-title {
-    font-size: 8em;
-    margin-bottom: 0.3em !important;
-  }
+.team-list-item .team-avatar {
+  box-sizing: border-box;
+  height: 0;
+  width: calc(100% - 2em);
+  margin: 0 1em;
+  padding-top: calc(100% - 2em);
+  border: 0;
+  border-radius: 999em;
+  background-color: #f9f9f951;
+  margin-bottom: 0.3em;
 }
-
-.main-triple {
-  background-color: white;
-  margin-top: 4em;
-  align-items: stretch;
+.team-list-item .team-name {
+  font-weight: 900;
+  margin-bottom: 0.3em;
 }
-
 .hero-text {
   font-size: 1.4em;
   padding: 1em;
@@ -932,20 +942,19 @@ html {
 .footer {
   color: white;
 }
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer a:hover {
+  opacity: 0.8;
+}
 .footer .footer-list-item {
   display: block;
   color: inherit;
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 0.4em;
-}
-
-hr {
-  margin: 4em 0;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: #031b4e;
-  height: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
