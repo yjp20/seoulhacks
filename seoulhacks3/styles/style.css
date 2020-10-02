@@ -920,7 +920,8 @@ html {
   padding: 2em 0;
 }
 .team-list-item .team-avatar {
-  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
   height: 0;
   width: calc(100% - 2em);
   margin: 0 1em;
@@ -929,6 +930,16 @@ html {
   border-radius: 999em;
   background-color: #f9f9f951;
   margin-bottom: 0.3em;
+}
+.team-list-item .team-avatar img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
 }
 .team-list-item .team-name {
   font-weight: 900;
