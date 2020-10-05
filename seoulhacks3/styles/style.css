@@ -807,9 +807,11 @@ html {
 }
 
 .light-box {
+  box-sizing: border-box;
   box-shadow: 0 4px 12px 0px #0023830a;
   padding: 2em;
   background-color: #f3f5f9;
+  height: 100%;
 }
 .light-box.is-protruding {
   margin: 0 -2em;
@@ -852,9 +854,14 @@ html {
 .main-section {
   display: flex;
   box-sizing: border-box;
+  min-height: calc(100vh - 4em);
+  align-items: stretch;
+}
+.main-section > .container {
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: calc(100vh - 4em);
+  position: relative;
 }
 .main-section .main-title {
   position: relative;
@@ -868,19 +875,25 @@ html {
     margin-bottom: 0.3em !important;
   }
 }
-
-.main-apply-container {
-  display: block;
+.main-section .main-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2em;
 }
 @media only screen and (min-width: 700px) {
-  .main-apply-container {
+  .main-section .main-image {
     position: absolute;
+    width: unset;
+    height: 100%;
+    top: 0;
     right: 0;
-    bottom: 0.15em;
+    bottom: 0;
   }
 }
-.main-apply-container .main-apply {
+
+.main-apply {
   position: relative;
+  display: inline-block;
   overflow: hidden;
   padding: 1rem;
   border: 1px solid #031b4e;
@@ -891,28 +904,33 @@ html {
   color: #031b4e;
   transition: all 0.1s ease;
 }
-.main-apply-container .main-apply:before {
+.main-apply:before {
   position: absolute;
   right: -1em;
   display: inline-block;
   content: " ›";
   transition: right 0.3s ease;
 }
-.main-apply-container .main-apply:after {
+.main-apply:after {
   display: inline-block;
   width: 0em;
   content: "";
   transition: width 0.3s ease;
 }
-.main-apply-container .main-apply:hover {
+.main-apply:hover {
   opacity: 0.5;
   border: 1px solid #031b4e;
 }
-.main-apply-container .main-apply:hover:before {
+.main-apply:hover:before {
   right: 1em;
 }
-.main-apply-container .main-apply:hover:after {
+.main-apply:hover:after {
   width: 3em;
+}
+
+.prize-image {
+  width: 4em;
+  margin-bottom: 0.5em;
 }
 
 .team-list-item {
@@ -947,7 +965,11 @@ html {
 }
 .hero-text {
   font-size: 1.4em;
-  padding: 1em;
+}
+@media only screen and (min-width: 700px) {
+  .hero-text {
+    padding: 1em;
+  }
 }
 
 .footer {

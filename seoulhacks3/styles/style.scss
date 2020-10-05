@@ -49,9 +49,11 @@ html {
 }
 
 .light-box {
+  box-sizing: border-box;
   box-shadow: 0 4px 12px 0px #0023830a;
   padding: 2em;
   background-color: map-get($colors, "light");
+  height: 100%;
 
   &.is-protruding {
     margin: 0 -2em;
@@ -99,9 +101,15 @@ html {
 .main-section {
   display: flex;
   box-sizing: border-box;
-  flex-direction: column;
-  justify-content: flex-end;
   min-height: calc(100vh - 4em);
+  align-items: stretch;
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
 
   .main-title {
     position: relative;
@@ -114,113 +122,126 @@ html {
       margin-bottom: 0.3em !important;
     }
   }
+
+  .main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+
+    @include gt(tablet) {
+      position: absolute;
+      width: unset;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
 }
 
-.main-apply-container {
-  display: block;
+.main-apply {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 1rem;
+  border: 1px solid $text;
+  margin-top: 1em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: none;
+  color: $text;
+  transition: all 0.1s ease;
 
-  @include gt("tablet") {
+  &:before {
     position: absolute;
-    right: 0;
-    bottom: 0.15em;
+    right: -1em;
+    display: inline-block;
+    content: " ›";
+    transition: right 0.3s ease;
   }
 
-  .main-apply {
-    position: relative;
-    overflow: hidden;
-    padding: 1rem;
+  &:after {
+    display: inline-block;
+    width: 0em;
+    content: "";
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    opacity: 0.5;
     border: 1px solid $text;
-    margin-top: 1em;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background: none;
-    color: $text;
-    transition: all 0.1s ease;
 
     &:before {
-      position: absolute;
-      right: -1em;
-      display: inline-block;
-      content: " ›";
-      transition: right 0.3s ease;
+      right: 1em;
     }
 
     &:after {
-      display: inline-block;
-      width: 0em;
-      content: "";
-      transition: width 0.3s ease;
-    }
-
-    &:hover {
-      opacity: 0.5;
-      border: 1px solid $text;
-
-      &:before {
-        right: 1em;
-      }
-
-      &:after {
-        width: 3em;
-      }
+      width: 3em;
     }
   }
 }
 
+.prize-image {
+  width: 4em;
+  margin-bottom: 0.5em;
+}
+
 .team-list-item {
-	text-align: center;
-	padding: 2em 0;
+  text-align: center;
+  padding: 2em 0;
 
   .team-avatar {
-		overflow: hidden;
-		position: relative;
-		height: 0;
-		width: calc(100% - 2em);
-		margin: 0 1em;
-		padding-top: calc(100% - 2em);
-		border: 0;
-		border-radius: 999em;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    width: calc(100% - 2em);
+    margin: 0 1em;
+    padding-top: calc(100% - 2em);
+    border: 0;
+    border-radius: 999em;
     background-color: #f9f9f951;
-		margin-bottom: 0.3em;
+    margin-bottom: 0.3em;
 
-		img {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			object-fit: cover;
-		}
-	}
-	
-	.team-name {
-		font-weight: 900;
-		margin-bottom: 0.3em;
-	}
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
 
-	.team-desc {
+  .team-name {
+    font-weight: 900;
+    margin-bottom: 0.3em;
+  }
 
-	}
+  .team-desc {
+  }
 }
 
 .hero-text {
   font-size: 1.4em;
-  padding: 1em;
+
+  @include gt("tablet") {
+    padding: 1em;
+  }
 }
 
 .footer {
-	color: white;
-	
-	a {
-		color: inherit;
-		text-decoration: none;
+  color: white;
 
-		&:hover {
-			opacity: 0.8;
-		}
-	}
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 
   .footer-list-item {
     display: block;
