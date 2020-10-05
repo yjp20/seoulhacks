@@ -1,0 +1,79 @@
+$gap: 32px !default;
+
+// Breakpoints are defined by their min-size
+// mobile is implicitly defined as 0px.
+$breakpoints:   (
+	"tablet":     700px,
+	"desktop":    960px+(2*$gap),
+	"widescreen": 1152px+(2*$gap),
+	"fullhd":     1344px+(2*$gap),
+)!default;
+
+// Colors
+$colors: (
+	"black":          hsl(0, 0%, 4%),
+	"dark":           hsl(0, 0%, 30%),
+	"grey":           hsl(0, 0%, 70%),
+	"light":          hsl(0, 0%, 98%),
+
+	"red":            hsl(348, 86%, 61%),
+	"orange":         hsl(14, 100%, 53%),
+	"yellow":         hsl(48, 100%, 67%),
+	"green":          hsl(141, 53%, 53%),
+	"turquoise":      hsl(171, 100%, 41%),
+	"cyan":           hsl(204, 71%, 53%),
+	"blue":           hsl(217, 71%, 53%),
+	"purple":         hsl(271, 100%, 71%),
+	"lightred":       hsl(348, 86%, 81%),
+	"lightorange":    hsl(14, 100%, 73%),
+	"lightyellow":    hsl(48, 100%, 87%),
+	"lightgreen":     hsl(141, 53%, 73%),
+	"lightturquoise": hsl(171, 100%, 81%),
+	"lightcyan":      hsl(204, 71%, 73%),
+	"lightblue":      hsl(195, 53%, 73%),
+	"lightpurple":    hsl(271, 100%, 91%),
+)!default;
+
+$text:                map-get($colors, "black") !default;
+$border:              map-get($colors, "dark") !default;
+$border-width:        1px !default;
+
+$link:                map-get($colors, "blue") !default;
+$link-hover:          map-get($colors, "dark") !default;
+$link-hover-border:   map-get($colors, "grey") !default;
+$link-focus:          map-get($colors, "dark") !default;
+$link-focus-border:   map-get($colors, "grey") !default;
+$link-visited:        map-get($colors, "dark") !default;
+$link-visited-border: map-get($colors, "grey") !default;
+$link-active:         map-get($colors, "dark") !default;
+$link-active-border:  map-get($colors, "grey") !default;
+
+// Typography
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif !default;
+$family-serif:     serif !default;
+$family-monospace: monospace !default;
+$render-mode:      optimizeLegibility !default;
+
+$size-1: 3rem !default;
+$size-2: 2.5rem !default;
+$size-3: 2rem !default;
+$size-4: 1.5rem !default;
+$size-5: 1.25rem !default;
+$size-6: 1rem !default;
+$size-7: 0.75rem !default;
+
+$weight-light:    300 !default;
+$weight-normal:   400 !default;
+$weight-medium:   500 !default;
+$weight-semibold: 600 !default;
+$weight-bold:     700 !default;
+
+// Miscellaneous
+$easing:         ease-out !default;
+$radius-small:   2px !default;
+$radius:         4px !default;
+$radius-large:   6px !default;
+$radius-rounded: 290486px !default;
+$speed:          86ms !default;

@@ -1,0 +1,9 @@
+$body-min-width: 300px;
+$body-size: 16px !default;
+
+html {
+	color: $text;
+	min-width: $body-min-width;
+	font-size: $body-size;
+	text-rendering: $render-mode;
+}

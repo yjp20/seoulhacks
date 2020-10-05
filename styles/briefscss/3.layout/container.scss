@@ -1,0 +1,12 @@
+.container {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 $gap;
+	width: 100%;
+
+	@each $name, $bp in $breakpoints {
+		@include gt($bp) {
+			width: $bp;
+		}
+	}
+}

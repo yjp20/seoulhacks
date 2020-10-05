@@ -1,0 +1,58 @@
+$family:                   $family-sans-serif;
+$title-margin-bottom:      0.5em !default;
+$subtitle-margin-bottom:   0.5em !default;
+$subtitle-collapse-margin: 0.25em !default;
+$paragraph-margin-bottom:  1em !default;
+$label-color:              map-get($colors, grey) !default;
+$label-font-size:          0.85em !default;
+$label-margin-bottom:      0.5em !default;
+
+
+body {
+	font-family: $family;
+	line-height: 1.15;
+}
+
+.title {
+	font-size: 3em;
+	&:not(:last-child) {
+		margin-bottom: $title-margin-bottom;
+	}
+}
+
+.subtitle {
+	font-size: 2em;
+	&:not(:last-child) {
+		margin-bottom: $subtitle-margin-bottom;
+	}
+
+	.title + & {
+		margin-top: -$subtitle-collapse-margin;
+	}
+}
+
+.paragraph {
+	&:not(:last-child) {
+		margin-bottom: $paragraph-margin-bottom;
+	}
+}
+
+.label {
+	color: $label-color;
+	font-size: $label-font-size;
+	margin-bottom: $label-margin-bottom;
+
+	&.is-caps {
+		text-transform: uppercase;
+		letter-spacing: 0.23em;
+		transform: scale(1, 0.95);
+	}
+}
+
+a {
+	color: $link;
+}
+
+b {
+	font-weight: 700;
+}

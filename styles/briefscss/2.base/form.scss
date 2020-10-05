@@ -1,0 +1,46 @@
+$input-border:             $border !default;
+$input-border-width:       $border-width !default;
+$input-shadow:             0 0 1px 2px #00000011;
+$input-padding-vertical:   0.5em;
+$input-padding-horizontal: 0.5em;
+$textarea-max-height:      40em !default;
+$textarea-min-height:      8em !default;
+
+.field {
+	&:not(:last-child) {
+		margin-bottom: 0.75rem;
+	}
+}
+
+%input-textarea {
+	box-sizing: border-box;
+	box-shadow: $input-shadow;
+	border-color: $input-border;
+	border-width: $input-border-width;
+	border-style: solid;
+	padding: $input-padding-vertical $input-padding-horizontal;
+	max-width: 100%;
+	width: 100%;
+
+	&[readonly] {
+		box-shadow: none;
+	}
+
+	&.is-rounded {
+		border-radius: $radius;
+	}
+}
+
+input {
+	@extend %input-textarea;
+}
+
+textarea {
+	@extend %input-textarea;
+	display: block;
+	resize: vertical;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: $textarea-min-height;
+	max-height: $textarea-max-height;
+}

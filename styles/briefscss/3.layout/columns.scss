@@ -1,0 +1,73 @@
+$column-gap: 0.75em!default;
+$column-num: 12 !default;
+$columns-margin-bottom: 1.5em;
+
+/*
+
+I don't think there is almost ever a scenario when you want columns to be flex
+if and only if it's smaller. Working with that assumption, `columns
+is-desktop` defines that you want it to only begin being a columns after the
+desktop breakpoint.
+
+*/
+
+.columns {
+	display: flex;
+	margin: -$column-gap;
+
+  &:not(:last-child) {
+    margin-bottom: $columns-margin-bottom - $column-gap;
+	}
+	&.is-centered {
+		justify-content: center;
+	}
+	&.is-vcentered {
+		align-items: center;
+	}
+	&.is-wrapped {
+		flex-wrap: wrap;
+	}
+
+	@each $name, $bp in $breakpoints {
+		@include lt($bp) {
+			&.is-#{$name} {
+				display: block;
+			}
+		}
+	}
+
+	.column {
+		box-sizing: border-box;
+		display: block;
+		box-sizing: border-box;
+		flex-basis: 0;
+		flex-grow: 1;
+		flex-shrink: 1;
+		padding: $column-gap;
+
+		@for $i from 1 through $column-num {
+			&.is-#{$i} {
+				flex: none;
+				width: $i/$column-num * 100%;
+			}
+			&.is-offset-#{$i} {
+				margin-left: $i/$column-num * 100%;
+			}
+		}
+
+		@each $name, $bp in $breakpoints {
+			@include gt($bp) {
+				@for $i from 1 through $column-num {
+					&.is-#{$i}-#{$name} {
+						flex: none;
+						width: $i/$column-num * 100%;
+					}
+					&.is-offset-#{$i}-#{$name} {
+						margin-left: $i/$column-num * 100%;
+					}
+				}
+			}
+		}
+	}
+}
+

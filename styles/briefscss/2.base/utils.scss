@@ -1,0 +1,17 @@
+.has-centered {
+	display: flex;
+	align-items: center;
+}
+
+.is-fullwidth {
+	width: 100%;
+}
+
+@each $key, $val in $colors {
+	.has-fg-#{$key} {
+		color: $val;
+	}
+	.has-bg-#{$key} {
+		background-color: $val;
+	}
+}

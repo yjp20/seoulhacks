@@ -1,0 +1,37 @@
+{
+	"name": "briefscss",
+	"version": "0.0.1",
+	"description": "Briefs is inspired by Bulma but made to be simpler and more flexible.",
+	"main": "brief.scss",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yjp20/briefcss.git"
+	},
+	"files": [
+		"css",
+		"sass",
+		"brief.scss",
+		"main.scss",
+		"init.scss",
+		"README.md"
+	],
+	"scripts": {
+		"start": "npm run build-sass -- --watch",
+		"build": "npm run build:sass && npm run build:autoprefix && npm run build:cleancss",
+		"build:sass": "node-sass --output-style expanded --source-map true brief.scss css/brief.css",
+		"build:autoprefix": "postcss --use autoprefixer --map false --output css/brief.css css/brief.css",
+		"build:cleancss": "cleancss -o css/brief.min.css css/brief.css"
+	},
+	"author": "Young Jin Park",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/yjp20/briefcss/issues"
+	},
+	"homepage": "https://github.com/yjp20/briefcss#readme",
+	"devDependencies": {
+		"autoprefixer": "^9.8.5",
+		"clean-css-cli": "^4.3.0",
+		"node-sass": "^4.14.1",
+		"postcss-cli": "^7.1.1"
+	}
+}
