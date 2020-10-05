@@ -121,6 +121,11 @@ html {
       font-size: 8em;
       margin-bottom: 0.3em !important;
     }
+
+    @include gt(widescreen) {
+      font-size: 10em;
+      margin-bottom: 0.15em !important;
+    }
   }
 
   .main-image {
